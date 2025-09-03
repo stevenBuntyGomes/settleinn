@@ -259,9 +259,9 @@ export default function LandingPage() {
           <div className="mt-10 lg:mt-14">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white/80 rounded-3xl ring-1 ring-gray-200 p-6 shadow">
               {[
-                { k: "378+", v: "Projects Completed" },
-                { k: "30+", v: "Experienced Staff" },
-                { k: "8+", v: "Ongoing Projects" },
+                { k: "378+", v: "Rental Services" },
+                { k: "30+", v: "Moving Services" },
+                { k: "8+", v: "Ride Sharing" },
                 { k: "5+", v: "Years Of Experience" },
               ].map((s) => (
                 <div key={s.v} className="text-center">
