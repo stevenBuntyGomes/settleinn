@@ -76,9 +76,9 @@ export default function LandingPage() {
             <div className="flex h-16 items-center justify-between">
               {/* Logo like ROOTDEVS. */}
               <a href="#home" className="flex items-center font-extrabold tracking-tight text-xl">
-                <span className="text-rose-600">ROOT</span>
-                <span className="text-gray-900">DEVS</span>
-                <span className="text-rose-600">.</span>
+                <span className="text-rose-600">Sattle</span>
+                <span className="text-gray-900">In</span>
+
               </a>
 
               {/* Desktop Nav */}
@@ -110,7 +110,7 @@ export default function LandingPage() {
                         }}
                         className="block px-4 py-3 text-sm hover:bg-gray-50"
                       >
-                        Mobile App Development
+                        Rental Service
                       </a>
                       <a
                         href="#services"
@@ -121,7 +121,7 @@ export default function LandingPage() {
                         }}
                         className="block px-4 py-3 text-sm hover:bg-gray-50"
                       >
-                        Web Development
+                        Moving Service
                       </a>
                       <a
                         href="#services"
@@ -132,7 +132,7 @@ export default function LandingPage() {
                         }}
                         className="block px-4 py-3 text-sm hover:bg-gray-50"
                       >
-                        Custom Software
+                        Ride Sharing
                       </a>
                     </div>
                   )}
@@ -238,7 +238,7 @@ export default function LandingPage() {
                   href="#contact"
                   className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-5 py-3 text-white text-sm font-semibold shadow hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-600"
                 >
-                  Contact us
+                  Book Now
                 </a>
               </div>
             </div>
