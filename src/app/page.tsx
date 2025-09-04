@@ -182,9 +182,9 @@ export default function LandingPage() {
                   <details className="px-3 py-2">
                     <summary className="cursor-pointer text-[15px] text-gray-700">Our Services</summary>
                     <div className="mt-2 flex flex-col">
-                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Mobile App Development</NavLink>
-                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Web Development</NavLink>
-                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Custom Software</NavLink>
+                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Rental Services</NavLink>
+                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Moving Services</NavLink>
+                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Ride Sharing</NavLink>
                     </div>
                   </details>
                   <NavLink href="#how-we-work" onClick={() => setMenuOpen(false)}>How We Work</NavLink>
@@ -312,7 +312,7 @@ export default function LandingPage() {
                   <path d="M7 7h6M7 11h6M7 15h4" />
                 </svg>
               </div>
-              <h3 className="text-center text-lg font-semibold">Mobile App Development</h3>
+              <h3 className="text-center text-lg font-semibold">Rental Services</h3>
               <p className="mt-3 text-center text-gray-600">
                 The most recent techniques and technologies are being used to develop a mobile application. Our skilled team of mobile developers creates the greatest mobile apps with Flutter technology…
               </p>
@@ -329,7 +329,7 @@ export default function LandingPage() {
                   <path d="M14 12h6" />
                 </svg>
               </div>
-              <h3 className="text-center text-lg font-semibold">Web Development</h3>
+              <h3 className="text-center text-lg font-semibold">Moving Services</h3>
               <p className="mt-3 text-center text-gray-600">
                 Developing web‑based software contributes to excellent user experiences. For maximum acceptance and conversion rates, our team specializes in creating, updating, and maintaining business and customer‑facing web applications…
               </p>
@@ -344,7 +344,7 @@ export default function LandingPage() {
                   <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V22a2 2 0 01-4 0v-.07a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06A2 2 0 013 17.71l.06-.06c.47-.47.6-1.17.33-1.77A1.65 1.65 0 002 14.5v-1a1.65 1.65 0 001.39-1.18c.27-.6.14-1.3-.33-1.77L3 10.5a2 2 0 012.83-2.83l.06.06c.47.47 1.17.6 1.77.33A1.65 1.65 0 0010.5 6h1a1.65 1.65 0 001.18-1.39c.27-.6.14-1.3-.33-1.77l-.06-.06A2 2 0 0116.29 1l.06.06c.47.47.6 1.17.33 1.77A1.65 1.65 0 0018 4.5V5c.62 0 1.2.25 1.61.66.41.41.66.99.66 1.61v.5c0 .62-.25 1.2-.66 1.61-.41.41-.99.66-1.61.66h-.5z" />
                 </svg>
               </div>
-              <h3 className="text-center text-lg font-semibold">Custom Software</h3>
+              <h3 className="text-center text-lg font-semibold">Ride Sharing Services</h3>
               <p className="mt-3 text-center text-gray-600">
                 Let’s develop a customized software program. Do you have a special need for your company? Together, we will create a unique software solution that meets your requirements and project objectives…
               </p>
@@ -357,122 +357,138 @@ export default function LandingPage() {
           <div className="h-64 w-64 rounded-full border-2 border-rose-100" />
         </div>
       </section>
-      {/* === SECTION: FEATURED WORK === */}
-      <section id="featured" className="relative py-16 sm:py-20 bg-white">
+      {/* Section – How it works (3 steps) */}
+      <section id="how-it-works" className="relative py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Heading */}
           <div className="text-center">
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
-              Take A Look At Our <span className="text-rose-600">Featured Work</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
+              How our services <span className="text-rose-600">Works</span>
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-gray-600">
-              We provide a range of services that are intended to provide unique solutions tailored to your company’s requirements.
-            </p>
           </div>
 
-          {/* Cards */}
-          <div className="mt-12 grid gap-10 md:grid-cols-2">
-            {/* Card 1 */}
-            <article className="relative rounded-[28px] bg-white ring-1 ring-gray-100 shadow-[0_12px_40px_rgba(0,0,0,.06)] overflow-hidden">
-              {/* Top visual */}
-              <div className="aspect-[16/10] w-full bg-gradient-to-br from-rose-600 to-red-500 flex items-end p-6">
-                <h3 className="text-white text-2xl font-extrabold drop-shadow">StampEzee</h3>
-              </div>
+          {/* STEP 1 */}
+          <div className="mt-12 grid md:grid-cols-2 gap-10 items-center">
+            <div className="relative">
+              <span className="absolute -left-4 top-3 h-10 w-3 bg-rose-500/20 rounded-r-xl" />
+              <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase">Step 1</p>
+              <h3 className="mt-2 text-2xl font-bold text-gray-900">
+                Select a template and upload your product photos
+              </h3>
+              <p className="mt-3 text-gray-600 leading-relaxed">
+                Use professionally designed templates proven to increase conversions. Upload your photos
+                or short clips, then jump right into editing.
+              </p>
+            </div>
 
-              {/* Bottom panel */}
-              <div className="p-5">
-                <div className="flex items-center justify-between">
-                  <p className="font-semibold text-gray-900">StampEzee</p>
-
-                  <a
-                    href="#case-studies"
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-rose-600 text-white shadow hover:bg-rose-700 transition"
-                    aria-label="Open case study"
-                  >
-                    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </a>
+            {/* mock image/card */}
+            <div className="relative">
+              <div className="relative h-72 w-full rounded-3xl bg-gray-50 ring-1 ring-gray-200 shadow-sm overflow-hidden">
+                {/* banner */}
+                <div className="absolute left-6 top-6 rounded-xl bg-rose-50 ring-1 ring-rose-100 px-4 py-2 text-rose-600 text-sm font-semibold">
+                  UNLOCK <span className="font-extrabold">20% OFF</span>
                 </div>
-
-                {/* Tech icons row */}
-                <div className="mt-4 flex items-center gap-3">
-                  {/* Flutter */}
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
-                    <svg viewBox="0 0 256 256" className="h-6 w-6" fill="currentColor">
-                      <path d="M91 173l74-74-31-31-105 105 31 31 31-31zm43 43l31-31-31-31-31 31 31 31z" />
-                    </svg>
-                  </span>
-                  {/* Apple */}
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                      <path d="M16.365 1.43c0 1.14-.47 2.22-1.22 3.02-.8.86-2.1 1.53-3.35 1.43-.14-1.08.47-2.25 1.2-3 .82-.85 2.22-1.47 3.37-1.45zM20.69 17.45c-.65 1.5-1.43 2.98-2.6 4.2-1 .98-2.3 2.1-3.77 2.1-1.42 0-1.8-.68-3.36-.68-1.6 0-2.02.66-3.4.7-1.4.04-2.47-1.02-3.48-2-2.37-2.3-4.2-6.54-1.76-9.45 1.02-1.25 2.64-2.04 4.27-2.06 1.34-.03 2.6.72 3.37.72.8 0 2.3-.88 3.88-.75 0 0 2.88.28 4.24 2.68-3.74 2.07-3.15 7.49.42 9.5z" />
-                    </svg>
-                  </span>
-                  {/* Android */}
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                      <path d="M6 8h12v9a2 2 0 01-2 2h-1v3h-2v-3H9v3H7v-3H6a2 2 0 01-2-2V8zm12-3l1-2M5 3L4 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    </svg>
-                  </span>
+                {/* canvas */}
+                <div className="absolute inset-0 m-8 rounded-2xl bg-white ring-1 ring-gray-200 grid grid-cols-5">
+                  <div className="col-span-4 grid place-items-center">
+                    <div className="rounded-xl border border-dashed border-gray-300 px-5 py-4 text-gray-500 text-sm">
+                      Drag media here
+                    </div>
+                  </div>
+                  <div className="col-span-1 border-l border-gray-100 p-3">
+                    <div className="h-8 w-full rounded-lg bg-gray-100 mb-2" />
+                    <div className="h-8 w-full rounded-lg bg-gray-100 mb-2" />
+                    <div className="h-8 w-full rounded-lg bg-gray-100" />
+                  </div>
                 </div>
               </div>
-            </article>
+            </div>
+          </div>
 
-            {/* Card 2 */}
-            <article className="relative rounded-[28px] bg-white ring-1 ring-gray-100 shadow-[0_12px_40px_rgba(0,0,0,.06)] overflow-hidden">
-              <div className="aspect-[16/10] w-full bg-sky-500 flex items-end p-6">
-                <h3 className="text-white text-2xl font-extrabold drop-shadow">SnapEzee</h3>
-              </div>
-
-              <div className="p-5">
-                <div className="flex items-center justify-between">
-                  <p className="font-semibold text-gray-900">SnapEzee</p>
-                  <a
-                    href="#case-studies"
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-rose-600 text-white shadow hover:bg-rose-700 transition"
-                    aria-label="Open case study"
-                  >
-                    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </a>
-                </div>
-
-                <div className="mt-4 flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
-                    <svg viewBox="0 0 256 256" className="h-6 w-6" fill="currentColor">
-                      <path d="M91 173l74-74-31-31-105 105 31 31 31-31zm43 43l31-31-31-31-31 31 31 31z" />
-                    </svg>
-                  </span>
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                      <path d="M16.365 1.43c0 1.14-.47 2.22-1.22 3.02-.8.86-2.1 1.53-3.35 1.43-.14-1.08.47-2.25 1.2-3 .82-.85 2.22-1.47 3.37-1.45zM20.69 17.45c-.65 1.5-1.43 2.98-2.6 4.2-1 .98-2.3 2.1-3.77 2.1-1.42 0-1.8-.68-3.36-.68-1.6 0-2.02.66-3.4.7-1.4.04-2.47-1.02-3.48-2-2.37-2.3-4.2-6.54-1.76-9.45 1.02-1.25 2.64-2.04 4.27-2.06 1.34-.03 2.6.72 3.37.72.8 0 2.3-.88 3.88-.75 0 0 2.88.28 4.24 2.68-3.74 2.07-3.15 7.49.42 9.5z" />
-                    </svg>
-                  </span>
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                      <path d="M6 8h12v9a2 2 0 01-2 2h-1v3h-2v-3H9v3H7v-3H6a2 2 0 01-2-2V8zm12-3l1-2M5 3L4 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    </svg>
-                  </span>
+          {/* STEP 2 (alternate sides) */}
+          <div className="mt-16 grid md:grid-cols-2 gap-10 items-center">
+            {/* card first on desktop */}
+            <div className="order-2 md:order-1">
+              <div className="relative h-72 w-full rounded-3xl bg-gray-50 ring-1 ring-gray-200 shadow-sm overflow-hidden">
+                {/* editor mock */}
+                <div className="absolute inset-0 m-8 rounded-2xl bg-white ring-1 ring-gray-200 p-4">
+                  <div className="flex gap-3 mb-4">
+                    <div className="h-7 w-20 rounded-md bg-gray-100" />
+                    <div className="h-7 w-24 rounded-md bg-gray-100" />
+                    <div className="h-7 w-16 rounded-md bg-gray-100" />
+                  </div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="col-span-2 h-36 rounded-xl bg-rose-50 ring-1 ring-rose-100" />
+                    <div className="space-y-3">
+                      <div className="h-4 w-full rounded bg-gray-100" />
+                      <div className="h-4 w-5/6 rounded bg-gray-100" />
+                      <div className="h-4 w-4/6 rounded bg-gray-100" />
+                    </div>
+                  </div>
                 </div>
               </div>
-            </article>
+            </div>
+
+            <div className="order-1 md:order-2 relative">
+              <span className="absolute -left-4 top-3 h-10 w-3 bg-rose-500/20 rounded-r-xl" />
+              <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase">Step 2</p>
+              <h3 className="mt-2 text-2xl font-bold text-gray-900">
+                Personalize your product video
+              </h3>
+              <p className="mt-3 text-gray-600 leading-relaxed">
+                Customize colors, fonts, captions, and music to match your brand. Fine-tune pacing and
+                layouts with a simple, visual editor.
+              </p>
+            </div>
+          </div>
+
+          {/* STEP 3 */}
+          <div className="mt-16 grid md:grid-cols-2 gap-10 items-center">
+            <div className="relative">
+              <span className="absolute -left-4 top-3 h-10 w-3 bg-rose-500/20 rounded-r-xl" />
+              <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase">Step 3</p>
+              <h3 className="mt-2 text-2xl font-bold text-gray-900">
+                Share your product video with potential customers
+              </h3>
+              <p className="mt-3 text-gray-600 leading-relaxed">
+                Publish to social channels, run it as an ad, or download and add it to your store.
+                Reaching new audiences is just a click away.
+              </p>
+            </div>
+
+            {/* email/share mock */}
+            <div>
+              <div className="relative h-72 w-full rounded-3xl bg-gray-50 ring-1 ring-gray-200 shadow-sm overflow-hidden">
+                <div className="absolute inset-0 m-8 rounded-2xl bg-white ring-1 ring-gray-200 p-5">
+                  <div className="space-y-4">
+                    <div className="h-5 w-40 rounded bg-gray-100" />
+                    <div className="h-10 w-full rounded-lg bg-gray-100" />
+                    <div className="h-10 w-full rounded-lg bg-gray-100" />
+                    <div className="h-16 w-full rounded-lg bg-gray-100" />
+                    <div className="flex justify-end">
+                      <button className="inline-flex items-center rounded-lg bg-rose-600 px-4 py-2 text-white text-sm font-semibold shadow hover:bg-rose-700">
+                        Send
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute -right-6 -bottom-6 h-28 w-44 rounded-3xl bg-rose-100/60 rotate-6" />
+              </div>
+            </div>
           </div>
 
           {/* CTA */}
           <div className="mt-10 flex justify-center">
             <a
-              href="#case-studies"
-              className="inline-flex items-center gap-2 rounded-full bg-rose-600 px-6 py-3 text-white text-sm font-semibold shadow hover:bg-rose-700"
+              href="#quote"
+              className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-3 text-white text-sm font-semibold shadow hover:bg-rose-700"
             >
-              View Case Studies
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              Make a product video
             </a>
           </div>
         </div>
       </section>
+
       {/* === SECTION: TESTIMONIALS === */}
       <section id="testimonials" className="relative bg-rose-50/60 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
