@@ -245,14 +245,30 @@ export default function LandingPage() {
 
             {/* Visual block – mimic Site01 office image with dark card */}
             <div className="relative">
-              <div className="aspect-[16/10] w-full rounded-3xl bg-[url('https://images.unsplash.com/photo-1573167243872-43c6433b9d40?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center shadow-2xl ring-1 ring-black/5" />
+              <div className="relative aspect-[16/10] w-full rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src="https://www.youtube.com/embed/M1amrI0b5S0?autoplay=1&mute=1&playsinline=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=M1amrI0b5S0"
+                  title="3D animated Landing page!"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+
               {/* dotted world-ish deco */}
-              <svg className="absolute -right-8 -bottom-8 w-56 h-56 text-rose-200" viewBox="0 0 200 200" fill="currentColor" aria-hidden>
+              <svg
+                className="absolute -right-8 -bottom-8 w-56 h-56 text-rose-200"
+                viewBox="0 0 200 200"
+                fill="currentColor"
+                aria-hidden
+              >
                 {Array.from({ length: 200 }).map((_, i) => (
                   <circle key={i} cx={(i % 20) * 10} cy={Math.floor(i / 20) * 10} r="1.2" />
                 ))}
               </svg>
             </div>
+
           </div>
 
           {/* Stats row (Site01 style) */}
@@ -339,6 +355,179 @@ export default function LandingPage() {
         {/* subtle circular decoration like Site02 */}
         <div className="pointer-events-none absolute -right-24 top-24 hidden lg:block">
           <div className="h-64 w-64 rounded-full border-2 border-rose-100" />
+        </div>
+      </section>
+      {/* === SECTION: FEATURED WORK === */}
+      <section id="featured" className="relative py-16 sm:py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
+              Take A Look At Our <span className="text-rose-600">Featured Work</span>
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-gray-600">
+              We provide a range of services that are intended to provide unique solutions tailored to your company’s requirements.
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div className="mt-12 grid gap-10 md:grid-cols-2">
+            {/* Card 1 */}
+            <article className="relative rounded-[28px] bg-white ring-1 ring-gray-100 shadow-[0_12px_40px_rgba(0,0,0,.06)] overflow-hidden">
+              {/* Top visual */}
+              <div className="aspect-[16/10] w-full bg-gradient-to-br from-rose-600 to-red-500 flex items-end p-6">
+                <h3 className="text-white text-2xl font-extrabold drop-shadow">StampEzee</h3>
+              </div>
+
+              {/* Bottom panel */}
+              <div className="p-5">
+                <div className="flex items-center justify-between">
+                  <p className="font-semibold text-gray-900">StampEzee</p>
+
+                  <a
+                    href="#case-studies"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-rose-600 text-white shadow hover:bg-rose-700 transition"
+                    aria-label="Open case study"
+                  >
+                    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                </div>
+
+                {/* Tech icons row */}
+                <div className="mt-4 flex items-center gap-3">
+                  {/* Flutter */}
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
+                    <svg viewBox="0 0 256 256" className="h-6 w-6" fill="currentColor">
+                      <path d="M91 173l74-74-31-31-105 105 31 31 31-31zm43 43l31-31-31-31-31 31 31 31z" />
+                    </svg>
+                  </span>
+                  {/* Apple */}
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                      <path d="M16.365 1.43c0 1.14-.47 2.22-1.22 3.02-.8.86-2.1 1.53-3.35 1.43-.14-1.08.47-2.25 1.2-3 .82-.85 2.22-1.47 3.37-1.45zM20.69 17.45c-.65 1.5-1.43 2.98-2.6 4.2-1 .98-2.3 2.1-3.77 2.1-1.42 0-1.8-.68-3.36-.68-1.6 0-2.02.66-3.4.7-1.4.04-2.47-1.02-3.48-2-2.37-2.3-4.2-6.54-1.76-9.45 1.02-1.25 2.64-2.04 4.27-2.06 1.34-.03 2.6.72 3.37.72.8 0 2.3-.88 3.88-.75 0 0 2.88.28 4.24 2.68-3.74 2.07-3.15 7.49.42 9.5z" />
+                    </svg>
+                  </span>
+                  {/* Android */}
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                      <path d="M6 8h12v9a2 2 0 01-2 2h-1v3h-2v-3H9v3H7v-3H6a2 2 0 01-2-2V8zm12-3l1-2M5 3L4 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            {/* Card 2 */}
+            <article className="relative rounded-[28px] bg-white ring-1 ring-gray-100 shadow-[0_12px_40px_rgba(0,0,0,.06)] overflow-hidden">
+              <div className="aspect-[16/10] w-full bg-sky-500 flex items-end p-6">
+                <h3 className="text-white text-2xl font-extrabold drop-shadow">SnapEzee</h3>
+              </div>
+
+              <div className="p-5">
+                <div className="flex items-center justify-between">
+                  <p className="font-semibold text-gray-900">SnapEzee</p>
+                  <a
+                    href="#case-studies"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-rose-600 text-white shadow hover:bg-rose-700 transition"
+                    aria-label="Open case study"
+                  >
+                    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                </div>
+
+                <div className="mt-4 flex items-center gap-3">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
+                    <svg viewBox="0 0 256 256" className="h-6 w-6" fill="currentColor">
+                      <path d="M91 173l74-74-31-31-105 105 31 31 31-31zm43 43l31-31-31-31-31 31 31 31z" />
+                    </svg>
+                  </span>
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                      <path d="M16.365 1.43c0 1.14-.47 2.22-1.22 3.02-.8.86-2.1 1.53-3.35 1.43-.14-1.08.47-2.25 1.2-3 .82-.85 2.22-1.47 3.37-1.45zM20.69 17.45c-.65 1.5-1.43 2.98-2.6 4.2-1 .98-2.3 2.1-3.77 2.1-1.42 0-1.8-.68-3.36-.68-1.6 0-2.02.66-3.4.7-1.4.04-2.47-1.02-3.48-2-2.37-2.3-4.2-6.54-1.76-9.45 1.02-1.25 2.64-2.04 4.27-2.06 1.34-.03 2.6.72 3.37.72.8 0 2.3-.88 3.88-.75 0 0 2.88.28 4.24 2.68-3.74 2.07-3.15 7.49.42 9.5z" />
+                    </svg>
+                  </span>
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-100 bg-gradient-to-b from-white to-rose-50">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                      <path d="M6 8h12v9a2 2 0 01-2 2h-1v3h-2v-3H9v3H7v-3H6a2 2 0 01-2-2V8zm12-3l1-2M5 3L4 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-10 flex justify-center">
+            <a
+              href="#case-studies"
+              className="inline-flex items-center gap-2 rounded-full bg-rose-600 px-6 py-3 text-white text-sm font-semibold shadow hover:bg-rose-700"
+            >
+              View Case Studies
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+      {/* === SECTION: TESTIMONIALS === */}
+      <section id="testimonials" className="relative bg-rose-50/60 py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 text-center">
+            What Our <span className="text-rose-600">Clients Think</span>
+          </h2>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {/* Testimonial 1 */}
+            <figure className="text-center">
+              <figcaption className="font-semibold text-gray-900">Rabin Thapa</figcaption>
+              <div className="text-xs text-gray-500 -mt-0.5 mb-3">CEO</div>
+
+              <div className="relative rounded-[24px] border-2 border-rose-200 bg-white p-6 shadow-sm">
+                {/* opening quote */}
+                <div className="absolute -top-4 left-6 rounded-full bg-white px-2 text-rose-500 text-2xl leading-none">“</div>
+                <p className="text-gray-700">
+                  “The team at RootDevs was absolutely fantastic to work with. They were incredibly responsive,
+                  knowledgeable, and always willing to go the extra mile to ensure our project was a success…”
+                </p>
+                {/* closing quote */}
+                <div className="absolute -bottom-4 right-6 rounded-full bg-white px-2 text-rose-500 text-2xl leading-none">”</div>
+              </div>
+            </figure>
+
+            {/* Testimonial 2 */}
+            <figure className="text-center">
+              <figcaption className="font-semibold text-gray-900">Bosco Edwin</figcaption>
+              <div className="text-xs text-gray-500 -mt-0.5 mb-3">CEO</div>
+
+              <div className="relative rounded-[24px] border-2 border-rose-200 bg-white p-6 shadow-sm">
+                <div className="absolute -top-4 left-6 rounded-full bg-white px-2 text-rose-500 text-2xl leading-none">“</div>
+                <p className="text-gray-700">
+                  “I was initially skeptical about outsourcing our software development, but RootDevs completely changed my mind.
+                  Their communication was excellent, and they were always transparent…”
+                </p>
+                <div className="absolute -bottom-4 right-6 rounded-full bg-white px-2 text-rose-500 text-2xl leading-none">”</div>
+              </div>
+            </figure>
+
+            {/* Testimonial 3 */}
+            <figure className="text-center">
+              <figcaption className="font-semibold text-gray-900">Dread La</figcaption>
+              <div className="text-xs text-gray-500 -mt-0.5 mb-3">Managing Director</div>
+
+              <div className="relative rounded-[24px] border-2 border-rose-200 bg-white p-6 shadow-sm">
+                <div className="absolute -top-4 left-6 rounded-full bg-white px-2 text-rose-500 text-2xl leading-none">“</div>
+                <p className="text-gray-700">
+                  “Working with RootDevs was a pleasure. Their team was not only skilled but also friendly and easy to work with.
+                  They were always willing to listen to our feedback and make adjustments…”
+                </p>
+                <div className="absolute -bottom-4 right-6 rounded-full bg-white px-2 text-rose-500 text-2xl leading-none">”</div>
+              </div>
+            </figure>
+          </div>
         </div>
       </section>
 
