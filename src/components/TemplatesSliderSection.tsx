@@ -16,7 +16,7 @@ export default function TemplatesSliderSection() {
   const bottomRow = buildRow(BOTTOM_IMAGE);
 
   return (
-    <section id="templates" className="relative py-16 sm:py-20 bg-rose-100">
+    <section id="templates" className="relative py-16 sm:py-20 bg-rose-50/70 ring-1 ring-rose-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading + Button (rose, not yellow) */}
         <div className="text-center">
