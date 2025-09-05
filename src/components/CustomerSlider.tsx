@@ -76,7 +76,7 @@ export default function TestimonialsSlider() {
   }, [idx]);
 
   return (
-    <section id="testimonials-slider" className="relative bg-rose-50/70 ring-1 ring-rose-100 py-16 sm:py-20"
+    <section id="testimonials-slider" className="relative bg-rose-50/60 ring-1 ring-rose-100 py-16 sm:py-20"
       onMouseEnter={stop}
       onMouseLeave={start}
     >

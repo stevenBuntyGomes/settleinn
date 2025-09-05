@@ -14,7 +14,7 @@ export default function CampaignPromo() {
 
         {/* Card styled like the slider */}
         <div className="mt-10 sm:mt-12">
-          <div className="rounded-[28px] bg-rose-50/70 ring-1 ring-rose-100 px-6 sm:px-10 pt-14 pb-12 sm:pt-16 sm:pb-14 text-center shadow-sm">
+          <div className="rounded-[28px] bg-rose-50/60 ring-1 ring-rose-100 px-6 sm:px-10 pt-14 pb-12 sm:pt-16 sm:pb-14 text-center shadow-sm">
             <p className="mx-auto max-w-2xl text-base sm:text-lg text-gray-900 leading-relaxed">
               <strong>Just $299.99</strong> helps welcome <strong>4 newcomer’s</strong> from
               Toronto Airport to Sudbury

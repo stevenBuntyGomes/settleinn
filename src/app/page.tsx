@@ -3,6 +3,9 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import TemplatesSliderSection from "@/components/TemplatesSliderSection";
 import TestimonialsSlider from "@/components/CustomerSlider";
 import CampaignPromo from "@/components/CampaignPromo";
+import DriveUDownloadSection from "@/components/DriveUDownload";
+import ContactSection from "@/components/ContactSection";
+import SiteFooter from "@/components/SiteFooter";
 // Small helper for smooth in-page scroll
 function useScrollSpy(sectionIds: string[]) {
   const [active, setActive] = useState(sectionIds[0] || "");
@@ -551,7 +554,9 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
+      <DriveUDownloadSection/>
+      <ContactSection/>
+      <SiteFooter/>
       {/* Dummy anchors for nav routes not implemented in this snippet */}
       <section id="case-studies" className="sr-only" aria-hidden="true"></section>
       <section id="how-we-work" className="sr-only" aria-hidden="true"></section>
