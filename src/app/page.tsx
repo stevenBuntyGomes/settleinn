@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-
+import TemplatesSliderSection from "@/components/TemplatesSliderSection";
+import TestimonialsSlider from "@/components/CustomerSlider";
+import CampaignPromo from "@/components/CampaignPromo";
 // Small helper for smooth in-page scroll
 function useScrollSpy(sectionIds: string[]) {
   const [active, setActive] = useState(sectionIds[0] || "");
@@ -489,6 +491,9 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <TemplatesSliderSection/>
+      <CampaignPromo/>
+      <TestimonialsSlider/>
       {/* === SECTION: TESTIMONIALS === */}
       <section id="testimonials" className="relative bg-rose-50/60 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
