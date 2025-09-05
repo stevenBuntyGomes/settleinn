@@ -493,7 +493,7 @@ export default function LandingPage() {
 
       <TemplatesSliderSection/>
       <CampaignPromo/>
-      <TestimonialsSlider/>
+      {/* <TestimonialsSlider/> */}
       {/* === SECTION: TESTIMONIALS === */}
       <section id="testimonials" className="relative bg-rose-50/60 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
