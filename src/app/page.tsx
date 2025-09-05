@@ -112,7 +112,7 @@ export default function LandingPage() {
                         }}
                         className="block px-4 py-3 text-sm hover:bg-gray-50"
                       >
-                        Rental Service
+                        Short Stay
                       </a>
                       <a
                         href="#services"
@@ -184,7 +184,7 @@ export default function LandingPage() {
                   <details className="px-3 py-2">
                     <summary className="cursor-pointer text-[15px] text-gray-700">Our Services</summary>
                     <div className="mt-2 flex flex-col">
-                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Rental Services</NavLink>
+                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Short Stays</NavLink>
                       <NavLink href="#services" onClick={() => setMenuOpen(false)}>Moving Services</NavLink>
                       <NavLink href="#services" onClick={() => setMenuOpen(false)}>Ride Sharing</NavLink>
                     </div>
@@ -277,7 +277,7 @@ export default function LandingPage() {
           <div className="mt-10 lg:mt-14">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white/80 rounded-3xl ring-1 ring-gray-200 p-6 shadow">
               {[
-                { k: "378+", v: "Rental Services" },
+                { k: "378+", v: "Short Stays" },
                 { k: "30+", v: "Moving Services" },
                 { k: "8+", v: "Ride Sharing" },
                 { k: "5+", v: "Years Of Experience" },
@@ -314,7 +314,7 @@ export default function LandingPage() {
                   <path d="M7 7h6M7 11h6M7 15h4" />
                 </svg>
               </div>
-              <h3 className="text-center text-lg font-semibold">Rental Services</h3>
+              <h3 className="text-center text-lg font-semibold">Short Stays</h3>
               <p className="mt-3 text-center text-gray-600">
                 The most recent techniques and technologies are being used to develop a mobile application. Our skilled team of mobile developers creates the greatest mobile apps with Flutter technology…
               </p>
