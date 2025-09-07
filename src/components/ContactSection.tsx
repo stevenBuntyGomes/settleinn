@@ -12,7 +12,7 @@ export default function ContactSection() {
               Get <span className="text-rose-600">In Touch</span>
             </h2>
             <p className="mt-4 max-w-lg text-gray-700">
-              Got a project in mind? We’d love to hear about it. Take five minutes to fill out our project form.
+              SettleInn your trusted partner for a fresh start!
             </p>
 
             <ul className="mt-8 space-y-5">
@@ -26,7 +26,7 @@ export default function ContactSection() {
                 <div>
                   <div className="font-semibold text-gray-900">Visit:</div>
                   <div className="text-gray-700">
-                    Amigo 14 Square, 59/C & 61/C, Asad Avenue, Mohammadpur, Dhaka 1207
+                    124 Cedar St Greater Sudbury, ON P3E 3L6
                   </div>
                 </div>
               </li>
@@ -40,7 +40,7 @@ export default function ContactSection() {
                 </span>
                 <div>
                   <div className="font-semibold text-gray-900">Mail:</div>
-                  <div className="text-gray-700">rootdevs.career@gmail.com</div>
+                  <div className="text-gray-700">contact@settleinn.app</div>
                 </div>
               </li>
 
@@ -53,7 +53,7 @@ export default function ContactSection() {
                 </span>
                 <div>
                   <div className="font-semibold text-gray-900">Phone:</div>
-                  <div className="text-gray-700">+880 1628 559 305</div>
+                  <div className="text-gray-700">+1 (249) 360-0777</div>
                 </div>
               </li>
             </ul>

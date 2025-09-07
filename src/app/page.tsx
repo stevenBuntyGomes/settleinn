@@ -6,6 +6,8 @@ import CampaignPromo from "@/components/CampaignPromo";
 import DriveUDownloadSection from "@/components/DriveUDownload";
 import ContactSection from "@/components/ContactSection";
 import SiteFooter from "@/components/SiteFooter";
+import DriveHeroVideo from "@/components/DriveHeroVideo";
+
 // Small helper for smooth in-page scroll
 function useScrollSpy(sectionIds: string[]) {
   const [active, setActive] = useState(sectionIds[0] || "");
@@ -253,13 +255,14 @@ export default function LandingPage() {
               <div className="relative aspect-[16/10] w-full rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5">
                 <iframe
                   className="absolute inset-0 h-full w-full"
-                  src="https://www.youtube.com/embed/M1amrI0b5S0?autoplay=1&mute=1&playsinline=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=M1amrI0b5S0"
-                  title="3D animated Landing page!"
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  referrerPolicy="strict-origin-when-cross-origin"
+                  src="https://drive.google.com/file/d/1AVOKKCgvr_8TH35Ux4rB_tqWJCaVgwN1/preview"
+                  title="SettleInn hero video"
+                  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
                   allowFullScreen
                 />
               </div>
+
+
 
               {/* dotted world-ish deco */}
               <svg
@@ -493,7 +496,7 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
+      <DriveHeroVideo fileId="1paQF1npKD8plpshfOfkq1dJmjB_7U1uh" />
       <TemplatesSliderSection/>
       <CampaignPromo/>
       {/* <TestimonialsSlider/> */}
