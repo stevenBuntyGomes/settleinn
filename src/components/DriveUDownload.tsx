@@ -1,12 +1,61 @@
 "use client";
-import React from "react";
+import React, { useMemo, useState } from "react";
+
+/** Extract a Drive file ID from either a raw ID or a share URL */
+const driveId = (value: string) => value.match(/[-\w]{25,}/)?.[0] ?? value;
+
+/** Build image URLs */
+const driveView = (value: string) =>
+  `https://drive.google.com/uc?export=view&id=${driveId(value)}`;
+const driveThumb = (value: string, w = 1200) =>
+  `https://drive.google.com/thumbnail?id=${driveId(value)}&sz=w${w}`;
+
+/** <img> that tries the inline "view" URL first, then falls back to "thumbnail" if blocked */
+function DriveImage({
+  file,
+  alt,
+  w = 1200,
+  className = "",
+  draggable = false,
+}: {
+  file: string;
+  alt: string;
+  w?: number;
+  className?: string;
+  draggable?: boolean;
+}) {
+  const [src, setSrc] = useState(() => driveView(file));
+  const fallback = useMemo(() => driveThumb(file, w), [file, w]);
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      draggable={draggable}
+      referrerPolicy="no-referrer"
+      onError={() => src !== fallback && setSrc(fallback)}
+    />
+  );
+}
 
 export default function DriveUDownloadSection() {
+  // === Paste your Drive share URLs or raw file IDs here ===
+  const RIDER_PHONE =
+    "https://drive.google.com/file/d/1FSSve9whoyQVBzQMn3OLtDOHOWOeZ-0d/view?usp=sharing";
+  const DRIVER_PHONE =
+    "https://drive.google.com/file/d/1zWoe47CPWfpvj-mfUi891wywwx6rJeaO/view?usp=sharing";
+  const APP_STORE_BADGE =
+    "https://drive.google.com/file/d/1_IJEQZpfNVc5A-duIUQMfjep0coZ7hK8/view?usp=sharing";
+  const GOOGLE_PLAY_BADGE =
+    "https://drive.google.com/file/d/1vCtbyUrRFCoinAgf8goQpUS3yo4rvCRO/view?usp=sharing";
+
+  // (Optional) real store links:
+  const APP_STORE_LINK = "#";
+  const GOOGLE_PLAY_LINK = "#";
+
   return (
-    <section
-      id="driveu-apps"
-      className="relative py-16 sm:py-20"
-    >
+    <section id="driveu-apps" className="relative py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center">
@@ -20,28 +69,32 @@ export default function DriveUDownloadSection() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {/* Rideshare */}
-          <AppCard
-            title="SettleInn DriveU Rideshare"
-            shots={[
-              "https://images.unsplash.com/photo-1551816230-ef5deaed4a36?w=300&q=80&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1508780709619-79562169bc64?w=300&q=80&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1503602642458-232111445657?w=300&q=80&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1483721310020-03333e577078?w=300&q=80&auto=format&fit=crop",
+        {/* Side-by-side panels */}
+        <div className="mt-10 grid gap-8 md:grid-cols-2">
+          <Panel
+            titleRed="Need a Ride?"
+            subtitleRed="Download Our Apps"
+            copy={[
+              "Driven by Community.",
+              "Powered by People.",
+              "SettleInn DriveU connects neighbors, newcomers, and travelers with safe, trusted rides and meaningful driver opportunities.",
             ]}
+            phoneFile={RIDER_PHONE}
+            appStore={{ href: APP_STORE_LINK, file: APP_STORE_BADGE }}
+            googlePlay={{ href: GOOGLE_PLAY_LINK, file: GOOGLE_PLAY_BADGE }}
           />
 
-          {/* Driver */}
-          <AppCard
-            title="SettleInn DriveU Driver"
-            shots={[
-              "https://images.unsplash.com/photo-1548365328-9f547fb0953c?w=300&q=80&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=300&q=80&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&q=80&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1505238680356-667803448bb6?w=300&q=80&auto=format&fit=crop",
+          <Panel
+            titleRed="Become a Driver?"
+            subtitleRed="Download Our Apps"
+            copy={[
+              "Driven by Community.",
+              "Powered by People.",
+              "SettleInn DriveU connects neighbors, newcomers, and travelers with safe, trusted rides and meaningful driver opportunities.",
             ]}
+            phoneFile={DRIVER_PHONE}
+            appStore={{ href: APP_STORE_LINK, file: APP_STORE_BADGE }}
+            googlePlay={{ href: GOOGLE_PLAY_LINK, file: GOOGLE_PLAY_BADGE }}
           />
         </div>
       </div>
@@ -49,57 +102,83 @@ export default function DriveUDownloadSection() {
   );
 }
 
-function AppCard({ title, shots }: { title: string; shots: string[] }) {
+function Panel({
+  titleRed,
+  subtitleRed,
+  copy,
+  phoneFile,
+  appStore,
+  googlePlay,
+}: {
+  titleRed: string;
+  subtitleRed: string;
+  copy: string[];
+  phoneFile: string;
+  appStore: { href: string; file: string };
+  googlePlay: { href: string; file: string };
+}) {
   return (
     <div className="rounded-2xl bg-rose-50/60 ring-1 ring-rose-100 shadow-sm p-6 sm:p-7">
-      <h3 className="text-center text-[15px] font-semibold text-gray-900">{title}</h3>
+      <div className="grid items-center gap-6 lg:gap-8 grid-cols-2">
+        {/* Text */}
+        <div>
+          <h3 className="text-2xl font-extrabold tracking-tight text-rose-600">
+            {titleRed}
+            <br />
+            {subtitleRed}
+          </h3>
 
-      {/* Screens strip */}
-      <div className="mt-5 flex items-end justify-center gap-3 sm:gap-4">
-        {shots.map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt=""
-            className="h-28 sm:h-32 w-auto rounded-[10px] ring-1 ring-gray-200 object-cover"
-            draggable={false}
-          />
-        ))}
-      </div>
+          <div className="mt-4 space-y-1.5">
+            {copy.map((line, i) => (
+              <p key={i} className="text-slate-800">
+                {line}
+              </p>
+            ))}
+          </div>
 
-      {/* Store badges */}
-      <div className="mt-6 flex items-center justify-center gap-3 sm:gap-4">
-        <StoreBadge type="apple" href="#" />
-        <StoreBadge type="google" href="#" />
+          <div className="mt-6 flex items-center gap-3 sm:gap-4">
+            <Badge href={appStore.href}>
+              <DriveImage
+                file={appStore.file}
+                alt="Download on the App Store"
+                w={600}
+                className="h-10 sm:h-12 w-auto object-contain"
+              />
+            </Badge>
+            <Badge href={googlePlay.href}>
+              <DriveImage
+                file={googlePlay.file}
+                alt="Get it on Google Play"
+                w={600}
+                className="h-10 sm:h-12 w-auto object-contain"
+              />
+            </Badge>
+          </div>
+        </div>
+
+        {/* Phone mockup (slightly smaller so layout fits nicely) */}
+        <div className="justify-self-center">
+          <div className="w-[min(240px,32vw)] sm:w-[min(280px,34vw)] aspect-[390/844] rounded-[28px] overflow-hidden shadow-xl ring-1 ring-rose-100 bg-white">
+            <DriveImage
+              file={phoneFile}
+              alt="DriveU app on phone"
+              w={1400}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-function StoreBadge({ type, href }: { type: "apple" | "google"; href: string }) {
-  const isApple = type === "apple";
+function Badge({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-2 rounded-lg bg-black px-3.5 py-2 text-white shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-gray-700"
+      className="inline-flex items-center overflow-hidden"
     >
-      {isApple ? (
-        <>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M16.365 1.43c.04 1.104-.402 2.174-1.186 2.954-.812.806-1.79 1.27-2.89 1.2-.05-1.08.44-2.19 1.21-2.98.8-.81 2.08-1.39 2.87-1.17zM20.5 17.1c-.33.76-.73 1.47-1.2 2.12-.64.88-1.17 1.49-1.59 1.83-.62.57-1.29.86-2 .87-.51.01-1.08-.15-1.77-.46-.69-.3-1.33-.45-1.91-.46-.61 0-1.28.15-2.01.46-.73.3-1.31.46-1.73.47-.69.03-1.36-.27-2.01-.9-.43-.38-.98-1.01-1.64-1.87-.7-.92-1.28-1.98-1.73-3.17-.49-1.3-.74-2.56-.74-3.79 0-1.4.3-2.61.9-3.64.47-.8 1.09-1.42 1.85-1.87.76-.44 1.58-.67 2.46-.68.48 0 1.1.17 1.86.5.76.33 1.25.5 1.48.5.18 0 .72-.21 1.65-.62.89-.38 1.65-.54 2.26-.49 1.67.14 2.93.79 3.78 1.96-1.5.91-2.24 2.19-2.23 3.86.01 1.29.48 2.37 1.41 3.21.42.4.89.7 1.42.91-.11.31-.23.61-.37.9z" />
-          </svg>
-          <span className="text-[10px] leading-3">Download on the</span>
-          <span className="text-sm font-semibold -ml-1">App Store</span>
-        </>
-      ) : (
-        <>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M3 4.27v15.46c0 .62.67 1.01 1.21.7l9.23-5.36-2.43-2.43L3 4.27zM20.3 10.86L17.4 9.19l-3 3 3 3 2.9-1.67c.9-.52.9-1.82 0-2.66zM13.77 8.6l-1.85 1.85 2.43 2.43 1.85-1.85-2.43-2.43z" />
-          </svg>
-          <span className="text-[10px] leading-3">GET IT ON</span>
-          <span className="text-sm font-semibold -ml-1">Google Play</span>
-        </>
-      )}
+      {children}
     </a>
   );
 }

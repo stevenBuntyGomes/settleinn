@@ -82,12 +82,14 @@ export default function LandingPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               {/* Logo like ROOTDEVS. */}
-              <a href="#home" className="flex items-center font-extrabold tracking-tight text-xl">
-                <span className="text-rose-600">Sattle</span>
-                <span className="text-gray-900">In</span>
-
+              <a href="#home" className="flex items-center" aria-label="SettleInn home">
+                <img
+                  src="https://drive.google.com/thumbnail?id=16UhCMgi0lQCYxqMWiESzW1RriIVTJh-j&sz=w240"
+                  alt="SettleInn"
+                  className="h-8 sm:h-9 w-auto"
+                  draggable={false}
+                />
               </a>
-
               {/* Desktop Nav */}
               <nav className="hidden md:flex items-center gap-1">
                 <NavLink href="#home" active={active === "home"}>About Us</NavLink>
