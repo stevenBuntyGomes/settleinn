@@ -84,10 +84,16 @@ export default function LandingPage() {
               {/* Logo like ROOTDEVS. */}
               <a href="#home" className="flex items-center" aria-label="SettleInn home">
                 <img
-                  src="https://drive.google.com/thumbnail?id=16UhCMgi0lQCYxqMWiESzW1RriIVTJh-j&sz=w240"
+                  src="https://drive.google.com/thumbnail?id=1Uio7fAiJr9u8yOCp1YfngKQ4rvkXCT0I&sz=w320"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://lh3.googleusercontent.com/d/1Uio7fAiJr9u8yOCp1YfngKQ4rvkXCT0I=w320";
+                  }}
                   alt="SettleInn"
-                  className="h-8 sm:h-9 w-auto"
+                  className="block h-10 sm:h-11 w-auto origin-left scale-[3.9] sm:scale-[4]"
+                  referrerPolicy="no-referrer"
                   draggable={false}
+                  loading="eager"
+                  decoding="async"
                 />
               </a>
               {/* Desktop Nav */}
@@ -191,9 +197,9 @@ export default function LandingPage() {
                   <details className="px-3 py-2">
                     <summary className="cursor-pointer text-[15px] text-gray-700">Our Services</summary>
                     <div className="mt-2 flex flex-col">
-                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Short Stays</NavLink>
-                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Moving Services</NavLink>
                       <NavLink href="#services" onClick={() => setMenuOpen(false)}>Ride Sharing</NavLink>
+                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Moving Services</NavLink>
+                      <NavLink href="#services" onClick={() => setMenuOpen(false)}>Short Stays</NavLink>
                     </div>
                   </details>
                   <NavLink href="#how-we-work" onClick={() => setMenuOpen(false)}>How We Work</NavLink>
@@ -226,7 +232,7 @@ export default function LandingPage() {
                 ABOUT SETTLEINN
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900">
-                Settle in with <span className="text-rose-600">comfort</span>,
+                Settle inn with <span className="text-rose-600">comfort</span>,
                 <br className="hidden sm:block" /> convenience & community
               </h1>
               <p className="mt-5 text-gray-700 leading-relaxed max-w-xl">

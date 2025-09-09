@@ -9,12 +9,22 @@ export default function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand + social */}
           <div>
-            <a href="#home" className="flex items-center font-extrabold tracking-tight text-2xl">
-              <span className="text-gray-900">Settle</span>
-              <span className="text-rose-600">inn</span>
-            </a>
+            <a href="#home" className="flex items-center" aria-label="SettleInn home">
+                <img
+                  src="https://drive.google.com/thumbnail?id=1Uio7fAiJr9u8yOCp1YfngKQ4rvkXCT0I&sz=w320"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://lh3.googleusercontent.com/d/1Uio7fAiJr9u8yOCp1YfngKQ4rvkXCT0I=w320";
+                  }}
+                  alt="SettleInn"
+                  className="block h-10 sm:h-11 w-auto origin-left scale-[4.7] sm:scale-[4.9]"
+                  referrerPolicy="no-referrer"
+                  draggable={false}
+                  loading="eager"
+                  decoding="async"
+                />
+              </a>
 
-            <div className="mt-5 flex items-center gap-4 text-gray-600">
+            <div className="mt-5 ml-15 flex items-center gap-4 text-gray-600">
               <a aria-label="Facebook" href="#" className="hover:text-rose-600">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.1 5.66 21.21 10.44 22v-7.02H7.9v-2.9h2.54V9.84c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34V22C18.34 21.21 22 17.1 22 12.07z"/></svg>
               </a>

@@ -39,6 +39,24 @@ function DriveImage({
   );
 }
 
+/** Top-left brand logo (exact URLs you provided) */
+function BrandLogo() {
+  return (
+    <img
+      src="https://drive.google.com/thumbnail?id=1Uio7fAiJr9u8yOCp1YfngKQ4rvkXCT0I&sz=w320"
+      onError={(e) => {
+        e.currentTarget.src = "https://lh3.googleusercontent.com/d/1Uio7fAiJr9u8yOCp1YfngKQ4rvkXCT0I=w320";
+      }}
+      alt="SettleInn"
+      className="block h-10 sm:h-11 w-auto origin-left scale-[4.5] sm:scale-[4.7]"
+      referrerPolicy="no-referrer"
+      draggable={false}
+      loading="eager"
+      decoding="async"
+    />
+  );
+}
+
 export default function DriveUDownloadSection() {
   // === Paste your Drive share URLs or raw file IDs here ===
   const RIDER_PHONE =
@@ -118,7 +136,12 @@ function Panel({
   googlePlay: { href: string; file: string };
 }) {
   return (
-    <div className="rounded-2xl bg-rose-50/60 ring-1 ring-rose-100 shadow-sm p-6 sm:p-7">
+    <div className="relative rounded-2xl bg-rose-50/60 ring-1 ring-rose-100 shadow-sm p-6 sm:p-7 pt-16 sm:pt-20">
+      {/* Top-left logo */}
+      <div className="absolute left-5 top-5">
+        <BrandLogo />
+      </div>
+
       <div className="grid items-center gap-6 lg:gap-8 grid-cols-2">
         {/* Text */}
         <div>
@@ -156,7 +179,7 @@ function Panel({
           </div>
         </div>
 
-        {/* Phone mockup (slightly smaller so layout fits nicely) */}
+        {/* Phone mockup */}
         <div className="justify-self-center">
           <div className="w-[min(240px,32vw)] sm:w-[min(280px,34vw)] aspect-[390/844] rounded-[28px] overflow-hidden shadow-xl ring-1 ring-rose-100 bg-white">
             <DriveImage
@@ -174,10 +197,7 @@ function Panel({
 
 function Badge({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a
-      href={href}
-      className="inline-flex items-center overflow-hidden"
-    >
+    <a href={href} className="inline-flex items-center overflow-hidden">
       {children}
     </a>
   );
